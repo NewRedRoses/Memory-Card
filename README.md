@@ -1,8 +1,16 @@
-# React + Vite
+# About
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple memory game using React and vite. Using the ... API to load content.
 
-Currently, two official plugins are available:
+# To do
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [ ] Lay up basic UI placement
+  - [ ] Create 'header' container.
+  - [ ] Create 'content' container.
+  - [ ] **Optional**: Create 'footer' container.
+- [ ] Create card component.
+- [ ] Load a `3x3` grid with cards for all the characters/items.
+  - [ ] **Optional**: have multiple difficulty levels (ex. a `4x4` grid can be 'hard' and a `2x2` can be 'easy').
+- [ ] Implement scoreboard
+  - [ ] Has "current score" and a "best score".
+- [ ] Randomly shuffle cards after clicking one card.
