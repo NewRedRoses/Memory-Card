@@ -1,6 +1,6 @@
 :root {
-  --dark-color: #333d79;
-  --light-color: #faebef;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
   --lm-text-color: var(--dark-color);
   /* button */
   --lm-btn-bg-color: var(--dark-color);
@@ -11,4 +11,8 @@ body {
   color: var(--dark-color);
   font-family: "Recursive", sans-serif;
   font-weight: 500;
+}
+#root {
+  height: 100vh;
+  width: 100vw;
 }
