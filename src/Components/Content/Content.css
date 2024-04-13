@@ -1,0 +1,13 @@
+.content-container {
+  display: flex;
+  justify-content: center;
+}
+.content {
+  min-width: 800px; /* subject to change w/ the cards */
+  background-color: #bdc3c7;
+  padding: 10px;
+}
+.score-container {
+  display: flex;
+  justify-content: space-between;
+}
