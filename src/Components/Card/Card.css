@@ -1,8 +1,18 @@
-.card {
-  min-width: 100px;
+.card button {
+  position: relative;
+  background-color: #2c3e50;
+  min-width: 300px;
+  min-height: 300px;
+  flex: 1;
+}
+.card button:active {
+  top: 5px;
 }
 .cards-container ul {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 20px;
   list-style-type: none; /* Remove bullets */
   margin: 0; /* Remove margins */
