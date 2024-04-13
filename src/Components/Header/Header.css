@@ -1,0 +1,9 @@
+.header-container {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  display: flex;
+  justify-content: space-between;
+}
+.header-container h1 {
+  margin: 10px;
+}
