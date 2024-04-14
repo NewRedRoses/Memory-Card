@@ -17,3 +17,8 @@
   list-style-type: none; /* Remove bullets */
   margin: 0; /* Remove margins */
 }
+.card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
