@@ -1,8 +1,13 @@
 import "./Card.css";
-export default function Card({ pictureUrl, name }) {
+
+export default function Card({ pictureUrl, name, onShuffle }) {
+  const handleShuffle = () => {
+    onShuffle();
+  };
+
   return (
     <div className="card">
-      <button>
+      <button onClick={handleShuffle}>
         <img src={pictureUrl} alt="" />
         <p>{name}</p>
       </button>

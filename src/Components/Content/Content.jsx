@@ -18,7 +18,7 @@ export default function Content() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [apiData, setApiData] = useState([]);
-  // API stuff, needs promise.all to wait for all the calls!
+
   useEffect(() => {
     const fetchPokemonData = async () => {
       const promises = pokemonNames.map((pokemon) =>
@@ -33,6 +33,11 @@ export default function Content() {
 
     fetchPokemonData();
   }, []);
+
+  const handleShuffle = () => {
+    setApiData(shuffle([...apiData]));
+  };
+
   return (
     <div className="content-container">
       <div className="content">
@@ -42,22 +47,28 @@ export default function Content() {
         </div>
         <div className="cards-container">
           <ul>
-            {console.log(apiData)}
-            {/* without the conditional rendering, there will be an error  */}
-            {apiData &&
-              apiData.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <Card
-                      pictureUrl={item.sprites.front_default}
-                      name={item.name}
-                    />
-                  </li>
-                );
-              })}
+            {apiData.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Card
+                    pictureUrl={item.sprites.front_default}
+                    name={item.name}
+                    onShuffle={handleShuffle}
+                  />
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
     </div>
   );
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
