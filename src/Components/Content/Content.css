@@ -1,6 +1,7 @@
 .content-container {
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 .content {
   min-width: 800px; /* subject to change w/ the cards */
