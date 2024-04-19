@@ -27,3 +27,7 @@
 .card button:hover {
   background-color: #34495e;
 }
+.card button:focus,
+.card button:focus-visible {
+  border: none;
+}

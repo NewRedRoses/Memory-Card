@@ -18,6 +18,7 @@ export default function Content() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [apiData, setApiData] = useState([]);
+  const [lastSelected, setLastSelected] = useState("");
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -33,7 +34,6 @@ export default function Content() {
 
     fetchPokemonData();
   }, []);
-
   const handleShuffle = () => {
     setApiData(shuffle([...apiData]));
   };
@@ -54,6 +54,10 @@ export default function Content() {
                     pictureUrl={item.sprites.front_default}
                     name={item.name}
                     onShuffle={handleShuffle}
+                    setLastSelected={setLastSelected}
+                    lastSelected={lastSelected}
+                    currentScore={currentScore}
+                    setCurrentScore={setCurrentScore}
                   />
                 </li>
               );
