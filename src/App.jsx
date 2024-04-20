@@ -4,7 +4,7 @@ import Content from "./Components/Content/Content";
 function App() {
   return (
     <>
-      <Header title="Testing" />
+      <Header title="Pokemon" />
       <Content />
     </>
   );
