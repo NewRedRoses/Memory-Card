@@ -1,3 +1,4 @@
+// Card.jsx
 import "./Card.css";
 
 export default function Card({
@@ -8,6 +9,8 @@ export default function Card({
   lastSelected,
   currentScore,
   setCurrentScore,
+  bestScore,
+  setBestScore,
 }) {
   const handleShuffle = () => {
     setLastSelected(name);
@@ -15,9 +18,17 @@ export default function Card({
     handleScore();
     console.log(name, lastSelected);
   };
+
   const handleScore = () => {
     if (name === lastSelected) {
-      setCurrentScore(currentScore + 1);
+      setCurrentScore((prevScore) => prevScore + 1);
+      setLastSelected(undefined);
+      name = undefined;
+      if (currentScore + 1 > bestScore) {
+        setBestScore(currentScore + 1);
+      }
+    } else {
+      if (lastSelected != undefined) setCurrentScore(0);
     }
   };
 

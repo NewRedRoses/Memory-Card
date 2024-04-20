@@ -1,3 +1,4 @@
+// Content.jsx
 import { useState, useEffect } from "react";
 import "./Content.css";
 import Card from "../Card/Card";
@@ -19,6 +20,7 @@ export default function Content() {
   const [bestScore, setBestScore] = useState(0);
   const [apiData, setApiData] = useState([]);
   const [lastSelected, setLastSelected] = useState("");
+  const [selection, setSelection] = useState([undefined, undefined]);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -34,6 +36,7 @@ export default function Content() {
 
     fetchPokemonData();
   }, []);
+
   const handleShuffle = () => {
     setApiData(shuffle([...apiData]));
   };
@@ -58,6 +61,9 @@ export default function Content() {
                     lastSelected={lastSelected}
                     currentScore={currentScore}
                     setCurrentScore={setCurrentScore}
+                    bestScore={bestScore}
+                    setBestScore={setBestScore}
+                    selection={selection}
                   />
                 </li>
               );
