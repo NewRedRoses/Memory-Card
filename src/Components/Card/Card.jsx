@@ -1,4 +1,5 @@
 // Card.jsx
+import { useState } from "react";
 import "./Card.css";
 
 export default function Card({
@@ -12,23 +13,26 @@ export default function Card({
   bestScore,
   setBestScore,
 }) {
+  const [arrayOfSelectedItems, setArrayOfSelectedItems] = useState([]);
   const handleShuffle = () => {
     setLastSelected(name);
     onShuffle();
     handleScore();
-    console.log(name, lastSelected);
   };
 
   const handleScore = () => {
     if (name === lastSelected) {
       setCurrentScore((prevScore) => prevScore + 1);
       setLastSelected(undefined);
-      name = undefined;
+      const updatedArray = [...arrayOfSelectedItems, name];
+      setArrayOfSelectedItems(updatedArray);
       if (currentScore + 1 > bestScore) {
         setBestScore(currentScore + 1);
       }
-    } else {
-      if (lastSelected != undefined) setCurrentScore(0);
+    } else if (lastSelected !== undefined) {
+      setCurrentScore(0);
+    } else if (arrayOfSelectedItems.includes(name)) {
+      setCurrentScore(0);
     }
   };
 

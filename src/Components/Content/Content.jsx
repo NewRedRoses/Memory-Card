@@ -20,7 +20,6 @@ export default function Content() {
   const [bestScore, setBestScore] = useState(0);
   const [apiData, setApiData] = useState([]);
   const [lastSelected, setLastSelected] = useState("");
-  const [selection, setSelection] = useState([undefined, undefined]);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -63,7 +62,6 @@ export default function Content() {
                     setCurrentScore={setCurrentScore}
                     bestScore={bestScore}
                     setBestScore={setBestScore}
-                    selection={selection}
                   />
                 </li>
               );
