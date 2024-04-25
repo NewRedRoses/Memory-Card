@@ -20,6 +20,7 @@ export default function Content() {
   const [bestScore, setBestScore] = useState(0);
   const [apiData, setApiData] = useState([]);
   const [lastSelected, setLastSelected] = useState("");
+  const [arrayOfSelectedItems, setArrayOfSelectedItems] = useState([]);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -38,6 +39,9 @@ export default function Content() {
 
   const handleShuffle = () => {
     setApiData(shuffle([...apiData]));
+  };
+  const updateSelectedItems = (itemName) => {
+    setArrayOfSelectedItems((prevArray) => [...prevArray, itemName]);
   };
 
   return (
@@ -62,6 +66,9 @@ export default function Content() {
                     setCurrentScore={setCurrentScore}
                     bestScore={bestScore}
                     setBestScore={setBestScore}
+                    updateSelectedItems={updateSelectedItems}
+                    arrayOfSelectedItems={arrayOfSelectedItems}
+                    setArrayOfSelectedItems={setArrayOfSelectedItems}
                   />
                 </li>
               );
