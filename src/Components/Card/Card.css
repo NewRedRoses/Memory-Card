@@ -33,3 +33,11 @@
 .card button:focus-visible {
   border: none;
 }
+.card p {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+.card p::first-letter {
+  font-size: 1.3rem;
+}
