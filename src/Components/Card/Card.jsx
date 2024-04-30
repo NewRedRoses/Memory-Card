@@ -1,9 +1,7 @@
 // Card.jsx
-import { useState, useEffect } from "react";
 import "./Card.css";
 
 export default function Card({
-  pictureUrl,
   name,
   onShuffle,
   setLastSelected,
@@ -43,7 +41,10 @@ export default function Card({
   return (
     <div className="card">
       <button onClick={handleShuffle}>
-        <img src={pictureUrl} alt="" />
+        <img
+          src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}
+          alt={name}
+        />
         <p>{name}</p>
       </button>
     </div>

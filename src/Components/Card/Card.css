@@ -22,7 +22,7 @@
 .card img {
   width: 250px;
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .card button:hover {
   background-color: #34495e;
